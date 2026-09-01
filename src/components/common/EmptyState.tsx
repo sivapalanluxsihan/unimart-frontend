@@ -36,7 +36,7 @@ export default function EmptyState({
       <Box sx={{ color: '#94a3b8', mb: 2, display: 'flex', justifyContent: 'center' }}>
         {icon || <InboxOutlinedIcon sx={{ fontSize: 64 }} />}
       </Box>
-      <Typography variant="h6" component="h2" fontWeight={600} color="text.primary" gutterBottom>
+      <Typography variant="h6" component="h2" sx={{ fontWeight: 600, color: 'text.primary', mb: 1 }}>
         {title}
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 450, mb: actionText ? 3 : 0 }}>

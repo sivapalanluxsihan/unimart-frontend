@@ -18,7 +18,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 import FilterListIcon from '@mui/icons-material/FilterList';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Link } from 'react-router-dom';
 import {
   useGetListingsQuery,
@@ -48,7 +48,7 @@ export function Component() {
 
   // Filter state
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<number | ''>('');
+  const [selectedCategory, setSelectedCategory] = useState<number | string>('');
   const [selectedStatus, setSelectedStatus] = useState<ListingStatus | ''>('AVAILABLE');
   const [page, setPage] = useState(0); // 0-indexed for backend
   const pageSize = 9;
@@ -110,7 +110,7 @@ export function Component() {
     }
   };
 
-  const listings = pageData?.content || [];
+  const listings: Listing[] = pageData?.content || [];
   const totalPages = pageData?.totalPages || 0;
 
   return (
@@ -131,7 +131,7 @@ export function Component() {
         }}
       >
         <Box>
-          <Typography variant="h4" component="h1" fontWeight={700} gutterBottom>
+          <Typography variant="h4" component="h1" sx={{ fontWeight: 700, mb: 1 }}>
             Campus Marketplace
           </Typography>
           <Typography variant="body1" sx={{ opacity: 0.9, maxWidth: 600 }}>
@@ -143,7 +143,7 @@ export function Component() {
           to={isAuthenticated ? '/listings/new' : '/login'}
           variant="contained"
           size="large"
-          startIcon={<AddCircleOutlineIcon />}
+          startIcon={<AddCircleIcon />}
           sx={{
             backgroundColor: '#f59e0b',
             color: '#0f172a',
@@ -219,7 +219,7 @@ export function Component() {
             value={selectedCategory}
             label="Category"
             onChange={(e) => {
-              setSelectedCategory(e.target.value === '' ? '' : Number(e.target.value));
+              setSelectedCategory(e.target.value);
               setPage(0);
             }}
           >
@@ -306,7 +306,7 @@ export function Component() {
 
           {/* Listings Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {listings.map((listing) => (
+            {listings.map((listing: Listing) => (
               <ListingCard
                 key={listing.id}
                 listing={listing}

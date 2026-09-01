@@ -39,7 +39,7 @@ export default function ConfirmDialog({
       maxWidth="xs"
       fullWidth
     >
-      <DialogTitle id="confirm-dialog-title" fontWeight={600}>
+      <DialogTitle id="confirm-dialog-title" sx={{ fontWeight: 600 }}>
         {title}
       </DialogTitle>
       <DialogContent>

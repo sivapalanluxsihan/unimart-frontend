@@ -26,9 +26,9 @@ export const listingsApi = baseApi.injectEndpoints({
         result?.content
           ? [
               ...result.content.map(({ id }) => ({ type: 'Listing' as const, id })),
-              { type: 'Listing', id: 'LIST' },
+              { type: 'Listing' as const, id: 'LIST' },
             ]
-          : [{ type: 'Listing', id: 'LIST' }],
+          : [{ type: 'Listing' as const, id: 'LIST' }],
     }),
 
     getListing: builder.query<Listing, number>({

@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Link as MuiLink } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 

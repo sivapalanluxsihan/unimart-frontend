@@ -13,9 +13,8 @@ import {
   Avatar,
 } from '@mui/material';
 import StorefrontIcon from '@mui/icons-material/Storefront';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ListAltIcon from '@mui/icons-material/ListAlt';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -66,7 +65,6 @@ export default function Navbar() {
             <Typography
               variant="h6"
               noWrap
-              component="span"
               sx={{
                 fontWeight: 700,
                 letterSpacing: '.05rem',
@@ -103,7 +101,7 @@ export default function Navbar() {
                 <Button
                   component={Link}
                   to="/listings/new"
-                  startIcon={<AddCircleOutlineIcon />}
+                  startIcon={<AddCircleIcon />}
                   variant={isActive('/listings/new') ? 'contained' : 'text'}
                   sx={{
                     color: 'white',
@@ -165,7 +163,7 @@ export default function Navbar() {
                   transformOrigin={{ vertical: 'top', horizontal: 'right' }}
                 >
                   <Box sx={{ px: 2, py: 1 }}>
-                    <Typography variant="subtitle2" fontWeight={600}>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
                       {user?.name || 'User'}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -183,7 +181,7 @@ export default function Navbar() {
                     onClick={handleCloseUserMenu}
                     sx={{ display: { sm: 'none' } }}
                   >
-                    <AddCircleOutlineIcon fontSize="small" sx={{ mr: 1 }} />
+                    <AddCircleIcon fontSize="small" sx={{ mr: 1 }} />
                     Post Listing
                   </MenuItem>
                   <MenuItem component={Link} to="/my/listings" onClick={handleCloseUserMenu}>

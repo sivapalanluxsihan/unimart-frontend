@@ -9,9 +9,9 @@ export const reviewsApi = baseApi.injectEndpoints({
         result
           ? [
               ...result.map(({ id }) => ({ type: 'Review' as const, id })),
-              { type: 'Review', id: 'LIST' },
+              { type: 'Review' as const, id: 'LIST' },
             ]
-          : [{ type: 'Review', id: 'LIST' }],
+          : [{ type: 'Review' as const, id: 'LIST' }],
     }),
 
     createReview: builder.mutation<Review, ReviewInput>({
@@ -21,8 +21,8 @@ export const reviewsApi = baseApi.injectEndpoints({
         body,
       }),
       invalidatesTags: [
-        { type: 'Review', id: 'LIST' },
-        { type: 'Listing', id: 'LIST' },
+        { type: 'Review' as const, id: 'LIST' },
+        { type: 'Listing' as const, id: 'LIST' },
       ],
     }),
 
@@ -33,8 +33,8 @@ export const reviewsApi = baseApi.injectEndpoints({
         body,
       }),
       invalidatesTags: (_result, _error, { id }) => [
-        { type: 'Review', id },
-        { type: 'Review', id: 'LIST' },
+        { type: 'Review' as const, id },
+        { type: 'Review' as const, id: 'LIST' },
       ],
     }),
 
@@ -44,8 +44,8 @@ export const reviewsApi = baseApi.injectEndpoints({
         method: 'DELETE',
       }),
       invalidatesTags: (_result, _error, id) => [
-        { type: 'Review', id },
-        { type: 'Review', id: 'LIST' },
+        { type: 'Review' as const, id },
+        { type: 'Review' as const, id: 'LIST' },
       ],
     }),
   }),

@@ -103,7 +103,7 @@ export function Component() {
     return (
       <Box sx={{ maxWidth: 600, mx: 'auto', textAlign: 'center', py: 6 }}>
         <Alert severity="warning" sx={{ mb: 3 }}>
-          <Typography variant="subtitle1" fontWeight={600}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
             Permission Denied
           </Typography>
           You are not the owner of this listing and cannot edit it.

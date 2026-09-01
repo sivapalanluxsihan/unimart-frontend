@@ -44,10 +44,10 @@ const listingSchema = z.object({
     .min(1, 'Description is required')
     .max(5000, 'Description must not exceed 5000 characters'),
   price: z.coerce
-    .number({ invalid_type_error: 'Price must be a valid number' })
+    .number({ message: 'Price must be a valid number' })
     .min(0, 'Price must be greater than or equal to 0'),
   categoryId: z.coerce
-    .number({ invalid_type_error: 'Please select a category' })
+    .number({ message: 'Please select a category' })
     .int('Category ID must be an integer')
     .positive('Please select a category'),
 });
@@ -126,7 +126,7 @@ export default function ListingForm({
       }}
     >
       <Box sx={{ mb: 3 }}>
-        <Typography variant="h5" component="h1" fontWeight={700} color="#1e293b" gutterBottom>
+        <Typography variant="h5" component="h1" sx={{ fontWeight: 700, color: '#1e293b', mb: 1 }}>
           {isEditMode ? 'Edit Listing' : 'Create New Listing'}
         </Typography>
         <Typography variant="body2" color="text.secondary">

@@ -34,7 +34,7 @@ export default function ReviewItem({ review }: ReviewItemProps) {
             {reviewerName ? reviewerName[0].toUpperCase() : 'U'}
           </Avatar>
           <Box>
-            <Typography variant="subtitle2" fontWeight={600} color="#1e293b">
+            <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#1e293b' }}>
               {reviewerName || 'Anonymous Buyer'}
             </Typography>
             <Typography variant="caption" color="text.secondary">
@@ -49,11 +49,11 @@ export default function ReviewItem({ review }: ReviewItemProps) {
       {comment && (
         <Typography
           variant="body2"
-          color="#334155"
           sx={{
             mt: 1,
             lineHeight: 1.6,
             whiteSpace: 'pre-wrap',
+            color: '#334155',
           }}
         >
           {comment}

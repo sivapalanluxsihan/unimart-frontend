@@ -12,7 +12,7 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import PersonIcon from '@mui/icons-material/Person';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { Link } from 'react-router-dom';
 import type { Listing, ListingStatus } from '../listingTypes';
@@ -154,7 +154,7 @@ export default function ListingCard({
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5, pt: 1, borderTop: '1px solid #f1f5f9' }}>
           {sellerName && (
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, color: '#64748b', fontSize: '0.8rem' }}>
-              <PersonOutlineIcon sx={{ fontSize: 16 }} />
+              <PersonIcon sx={{ fontSize: 16 }} />
               <Typography variant="caption" color="text.secondary">
                 Seller: <strong style={{ color: '#334155' }}>{sellerName}</strong>
               </Typography>

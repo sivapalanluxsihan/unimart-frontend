@@ -1,5 +1,5 @@
-import { Box, Typography, Button, Paper, Alert } from '@mui/material';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { Typography, Button, Paper, Alert } from '@mui/material';
+import ErrorIcon from '@mui/icons-material/Error';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 interface ErrorStateProps {
@@ -52,8 +52,8 @@ export default function ErrorState({
         alignItems: 'center',
       }}
     >
-      <ErrorOutlineIcon color="error" sx={{ fontSize: 56, mb: 1 }} />
-      <Typography variant="h6" component="h2" color="error" fontWeight={600} gutterBottom>
+      <ErrorIcon color="error" sx={{ fontSize: 56, mb: 1 }} />
+      <Typography variant="h6" component="h2" color="error" sx={{ fontWeight: 600, mb: 1 }}>
         {title}
       </Typography>
       <Alert severity="error" sx={{ maxWidth: 550, width: '100%', mb: 3, textAlign: 'left' }}>
